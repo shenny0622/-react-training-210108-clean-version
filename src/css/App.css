@@ -1,0 +1,354 @@
+@import '~material-design-icons/iconfont/material-icons.css';
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*--css reset end */
+
+/*-- 全域 border box */
+＊,*:after,*:before{
+    box-sizing: border-box;
+  }
+
+/* rwd img css，可當作是 CSS Reset */
+
+img{
+	max-width: 100%;
+	height: auto;
+	display: block; /*清除 img 下面留白  */
+  }
+
+/* header */
+header{
+    margin-bottom: 200px;
+}
+.banner{
+    height: 380px;
+    background-image: url("../images/Hero.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+	background-size: cover;
+}
+.container{
+    max-width: 1000px;
+    margin: 0 auto;  
+    text-align: center;
+}
+
+header h1{
+    padding-top: 89px;
+    font-family: 'PingFangTC-Regular';
+    font-size: 40px;
+    color: #FFFFFF;
+    letter-spacing: 3.89px;
+}
+header select{
+    margin-top: 96px;
+    width: 452px;
+    height: 48px;
+    color: #000;
+    font-size: 18px;
+    line-height: 21px;
+    background-color: rgba(255, 255, 255, 0.70);
+    border: 3px solid #FFFFFF;
+}
+
+.menu{
+    margin: 0 auto;
+    margin-top: 65px;
+    width: 800px;
+    height: 112px;
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.20);
+    border-radius: 5px;
+}
+.menu .title-menu{
+    padding: 20px 0 0 26px;
+    font-family: 'AppleSystemUIFont';
+    font-size: 20px;
+    line-height: 21px;
+    color: #000000;
+    text-align: left;
+    margin-bottom:18px;
+    font-weight: bolder;
+}
+
+/* 先前為了把 BS 的樣式蓋掉，才加上 .buttonList li */
+.buttonList li button{
+    margin-right: 23px;
+    width: 130px;
+    height: 42px;
+    text-align: center;
+    font-size: 20px;
+    color: #FFFFFF;
+    border: #FFFFFF;
+    border-radius: 5px;
+    cursor: pointer;
+    /* border: 1px solid transparent; */
+    /* user-select: none; */
+    outline: none;
+}
+
+.buttonList li button:hover{
+    filter: saturate(200%);
+    color: #000000;
+    font-weight:bold ;
+    transition: all 0.3s;  
+}
+
+.buttonList li button:focus{
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    color: #000000;
+    font-weight:bold ;
+    filter: saturate(200%);
+    font-size: 23px;
+}
+
+.buttonList{
+    display: flex;
+    justify-content: center;
+}
+header .icon-menu{
+    margin: 49px auto;
+    padding-top: 11px;
+    width: 900px;
+    height: 26px;
+    background-image: url("../images/icons_down.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+header hr{  
+    border: 1px dashed #559AC8;  
+}
+
+/* main */
+.main .title-main{
+    font-family: 'SFNSDisplay';
+    font-size: 36px;
+    color: #8A82CC;
+    margin-bottom: 24px;
+}
+
+/* card 裡面中的 我的最愛 icon */
+.circle{
+    background-color: #f26a6a;
+    /* background-color: #f36666; */
+    /* background-color: #FF5252; */
+    border-radius: 50px;
+    width: 35px;
+    height: 35px;
+    position:absolute;
+    right: 8px;
+    top: 10px;
+}
+.material-icons.color {
+    color:#FFFFFF;
+}
+
+/* .material-icons.color:hover {
+    color:#FFFFFF;
+ 
+} */
+
+.like {
+    position: absolute;
+    right: 5px;
+    top: 6px;
+}
+/* Card 的資料 */
+.main .list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.main .list-card{
+    margin-bottom: 40px;
+    width: 464px;
+    text-align: left;
+    background: #FFFFFF;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.20);
+    position: relative;
+
+}
+.list-card .img{
+    width: 464px;
+    height: 155px;  
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 464px auto;
+    color: #FFFFFF;
+}
+.img .img-title{
+    padding-top: 103px;
+    width: 464px;
+    height: 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.54) 100%);
+}
+
+.title-24px{
+    padding-left: 22px;
+    font-size: 24px;
+}
+.title-16px{
+    padding-right: 22px;
+    font-size: 16px;
+}
+.content-card{
+    padding:35px 24px 15px;
+    /* position: relative; */
+}
+.content-card p{
+    font-size: 16px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.content-card img{
+    padding-right: 7px;
+}
+
+.card_down_area {
+    display: flex;
+    justify-content: space-between;
+}
+
+.goTop{
+    /* display:block; */
+    display: none;
+    bottom:140px;
+    right:28px;
+    position:fixed;
+}
+
+.goTop:hover{
+    cursor: pointer;
+    background-color: #555;
+}
+
+.MuiPagination-ul{
+    display: flex;
+    justify-content: center;
+
+}
+
+.pagination{
+    justify-content: center;
+}
+.page {
+    display: flex;
+    justify-content: center;
+}
+.page li{
+    /* border:1px solid; */
+    width:40px;
+    line-height:40px;
+    /* text-align: center; */
+    /* margin:10px; */
+    font-size:16px;
+}
+
+.page a {
+    text-decoration: none;
+    color: #4A4A4A;
+    display: block;
+}
+
+.page a:hover{
+    background: #cecbee;
+    /* color:white; */
+}
+
+.page a:focus{
+    background: #8A82CC;
+    color:white;
+}
+.disable{
+    color: grey;
+    pointer-events: none; 
+    /* padding: 5px 7px;   */
+}
+
+.content{
+    margin-bottom: 30px;
+}
+/* footer */
+footer{
+    background: #559AC8;
+    text-align: center;
+    color: #FFFFFF;
+    padding-top:35px;
+    padding-bottom: 18px;
+}
+footer p{
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.pStyle{
+    color:#dfc878;
+}
+
+.purple{
+    background:#8A82CC;
+}
+
+.orange{
+    background:#FFA782;
+}
+
+.yellow{
+    background:#F5D105;
+}
+
+.blue{
+    background:#559AC8;
+}
