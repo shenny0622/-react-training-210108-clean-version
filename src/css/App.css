@@ -175,31 +175,32 @@ header hr{
 }
 
 /* card 裡面中的 我的最愛 icon */
-.circle{
+
+.list-card a{
     background-color: #f26a6a;
-    /* background-color: #f36666; */
-    /* background-color: #FF5252; */
     border-radius: 50px;
     width: 35px;
     height: 35px;
     position:absolute;
+    text-decoration: none;
     right: 8px;
     top: 10px;
 }
-.material-icons.color {
-    color:#FFFFFF;
-}
 
-/* .material-icons.color:hover {
+.list-card a i{
     color:#FFFFFF;
- 
-} */
-
-.like {
-    position: absolute;
+    position:absolute;
     right: 5px;
     top: 6px;
 }
+.list-card a:hover{
+    background-color: #ec5151;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    font-size: 30px;
+}
+
 /* Card 的資料 */
 .main .list{
     display: flex;
