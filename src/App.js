@@ -16,8 +16,8 @@ const App = () =>{
       cards: [],
       error: null,
       isLoaded: false,
-      itemZones:[], //宣告一個新的陣列(不重複區域)
-      cardsByZone:[], //宣告一個新的陣列(下拉選單和按鈕撈到的值跟父層 API 資料做比對)
+      itemZones:[], //宣告一個新的陣列(不重複區域) ，用於下拉選單不重複區域
+      cardsByZone:[], //宣告一個新的陣列(下拉選單和按鈕撈到的值跟父層 API 資料做比對)，getCurrentZone 出來的得到的
       currentZone:'請選擇行政區'
     });
     //分頁
@@ -25,7 +25,7 @@ const App = () =>{
     const [cardsPerPage] = useState(4);
 
 //API 資料
-// 初始值
+// 初始值 一載入進來做的事情 readyonly jq
 useEffect(()=>{
     fetch( 'https://raw.githubusercontent.com/hexschool/KCGTravel/master/datastore_search.json',{method:"GET"})
       .then(res => res.json())
@@ -73,14 +73,18 @@ useEffect(()=>{
   // 1.fifter 篩選
   // 2.綁定 state >宣告變數給他一個空陣列
 
+//很重要
 const getCurrentZone =(zone) =>{
+    //  console.log(currentPage); 確認頁數
     // console 第一個變數 'getCurrentZone' 代表是子層傳給父層撈到的值(第一個變數好辨認是哪邊產生的值)
     // console.log('getCurrentZone',zone);
     
     // 在 getCurrentZone function 中，cardsByZone 在跑完 filter 後狀態會改變
+    setCurrentPage(1);
     setState({
         ...state, // keep 住當前的狀態 ask!
         currentZone:zone,
+        //會宣告 currentZone 是因為 h2 問題
         // element 是一個物件，cardsByZone 是一個新陣列 物件
         cardsByZone: cards.filter(function(element){
             return element.Zone === zone;
@@ -102,8 +106,12 @@ const { cards,itemZones,cardsByZone,currentZone,} = state;
  const currentCards = cardsByZone.slice(indexOfFirstCard, indexOfLastCard);//slice去頭不含尾 取得部分資料
 
  // Change page
- const paginate = pageNumber => setCurrentPage(pageNumber);
- 
+ const paginate = pageNumber =>{
+  setCurrentPage(pageNumber);
+ } 
+//  function paginate(pageNumber){
+//    setCurrentPage(pageNumber);
+//  }
 return (
     <div className="App">
       <header className="banner">

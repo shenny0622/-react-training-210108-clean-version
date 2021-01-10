@@ -317,6 +317,10 @@ header hr{
     pointer-events: none; 
     /* padding: 5px 7px;   */
 }
+.default-focus{
+    background: #8A82CC;
+    color:white;
+}
 
 .content{
     margin-bottom: 30px;

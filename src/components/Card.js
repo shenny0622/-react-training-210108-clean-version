@@ -6,32 +6,56 @@ import tag from '../images/icons_tag.png'
 
 
 const Card = (props) => {
-  const [state,setState] = useState({
-    isFavorite: false,
-  });
-
+  //isFavorite = true > add favorite already
+  //isFavorite = false > haven't added in  favorite list
+  const [isFavorite,setIsFavorite] = useState(false);
+  
   const onLikeClick=(e) =>{
-    setState({
-      isFavorite: true,
-      })
+    
+  
+    //1. check isFavorite 
+    e.preventDefault()
+    //2. change style
+    if (!isFavorite)//>target === false
+    {
+      //style
+      e.target.textContent="favorite"
+      //control data
+      console.log('id', e.target.parentNode.parentNode.parentNode.id)
+      let currentId =  e.target.parentNode.parentNode.parentNode.id;
+      let myFavoirite = [];
+
+      if(localStorage.getItem('myFavoirite')!== null){
+        myFavoirite = JSON.parse(localStorage.getItem('myFavoirite'));
+      }
+      if(currentId !=='')
+        myFavoirite.push(currentId);
+      localStorage.setItem('myFavoirite',JSON.stringify(myFavoirite));
+    } 
+    else{
+      //style
+      e.target.textContent="favorite-border"
+      //controller
+      // myFavoirite = JSON.parse(localStorage.getItem('myFavoirite'));
+      // myFavoirite.splice();
+    }
+       
+    //3. udate isFavorite
+    setIsFavorite(!isFavorite);
+
 //抓到當下選得值
     e.preventDefault()
-    // let icon = document.querySelector('.material-icons');
-  //  console.log(e.target);
-  let isFavorite=e.target.textContent;
 
-   if (isFavorite =="false")
-      return e.target.textContent="favorite"
-  else (isFavorite =="true")  
-      return e.target.textContent="favorite-border"
 
+
+  
     
  }
     
   const {item} =  props;
 
   return(
-    <li className="list-card">
+    <li className="list-card" id={item.Id}>
       <div className="img" style={{backgroundImage: `url(${item.Picture1})`}}>
       <a className="material-icons" onClick={onLikeClick} href="!#"><i>favorite_border</i>
       </a>
