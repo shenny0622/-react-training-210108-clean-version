@@ -275,12 +275,6 @@ header hr{
     background-color: #555;
 }
 
-.MuiPagination-ul{
-    display: flex;
-    justify-content: center;
-
-}
-
 .pagination{
     justify-content: center;
 }
@@ -295,6 +289,12 @@ header hr{
     /* text-align: center; */
     /* margin:10px; */
     font-size:16px;
+}
+
+/* 分頁 default 效果 */
+.active{
+    background: #8A82CC;
+    color:white;
 }
 
 .page a {
@@ -316,10 +316,6 @@ header hr{
     color: grey;
     pointer-events: none; 
     /* padding: 5px 7px;   */
-}
-.default-focus{
-    background: #8A82CC;
-    color:white;
 }
 
 .content{

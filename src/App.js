@@ -23,6 +23,8 @@ const App = () =>{
     //分頁
     const [currentPage, setCurrentPage] = useState(1);//預設當前 page
     const [cardsPerPage] = useState(4);
+    const [isDeafultPage, setIsDeafultPage] = useState(false);
+    
 
 //API 資料
 // 初始值 一載入進來做的事情 readyonly jq
@@ -81,6 +83,7 @@ const getCurrentZone =(zone) =>{
     
     // 在 getCurrentZone function 中，cardsByZone 在跑完 filter 後狀態會改變
     setCurrentPage(1);
+    setIsDeafultPage(true);
     setState({
         ...state, // keep 住當前的狀態 ask!
         currentZone:zone,
@@ -153,6 +156,7 @@ return (
         cardsPerPage={cardsPerPage}
         totalPosts={cardsByZone.length}
         paginate={paginate}
+        isDeafultPage = {isDeafultPage}
       />
     </div>
     
