@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Pagination = ({ cardsPerPage, totalPosts, paginate,isDeafultPage}) => {
+const Pagination = ({ cardsPerPage, totalCards, paginate,isDeafultPage}) => {
   const pageNumbers = [];
 
-  for (let i = 1; i <= Math.ceil(totalPosts / cardsPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(totalCards / cardsPerPage); i++) {
     pageNumbers.push(i);
   }
 

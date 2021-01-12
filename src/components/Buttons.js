@@ -8,15 +8,15 @@ const Buttons = (props) =>{
     // ...Props
   } = props;
   
-  const onButtonClick=(e) =>{
+  const handleButtonClick=(e) =>{
      //抓到當下選得值
-    // console.log('onButtonClick',e.target.value);
+    // console.log('handleButtonClick',e.target.value);
     props.getZone(e.target.value);
   }
   return (
     // <button>{this.props.text} </button>
     // <button className={color} {...Props} onClick={() => alert(color)}>
-    <button type="button" className={color} onClick={onButtonClick} value={content}>
+    <button type="button" className={color} onClick={handleButtonClick} value={content}>
     {content}
     </button>  
   );  

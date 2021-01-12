@@ -197,10 +197,8 @@ header hr{
     background-color: #ec5151;
     width: 40px;
     height: 40px;
-    border-radius: 50px;
     font-size: 30px;
 }
-
 /* Card 的資料 */
 .main .list{
     display: flex;
@@ -291,12 +289,6 @@ header hr{
     font-size:16px;
 }
 
-/* 分頁 default 效果 */
-.active{
-    background: #8A82CC;
-    color:white;
-}
-
 .page a {
     text-decoration: none;
     color: #4A4A4A;
@@ -309,6 +301,11 @@ header hr{
 }
 
 .page a:focus{
+    background: #8A82CC;
+    color:white;
+}
+
+.page .active{
     background: #8A82CC;
     color:white;
 }
